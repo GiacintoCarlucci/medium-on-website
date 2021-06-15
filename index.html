@@ -51,7 +51,10 @@
 								${formatDate(post.pubDate)}
 							</div>
 							<div id="post-content">
-								${trimContent(post.description)}
+								${trimContent(post.description)}...
+								<p id="post-link">
+									<a href="${post.link}"> Continue reading... </a>
+								</p>
 							</div>
 						</div>
 					`

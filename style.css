@@ -29,3 +29,8 @@
   font-family: Sans;
   font-size: 14px;
 }
+
+#post-link a:link{
+  font-weight: 300;
+  text-decoration: none;
+}
