@@ -13,20 +13,20 @@
 }
 
 #post-title{
-  font-family: Sans;
+  font-family: 'Palanquin', sans-serif;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 5px
 }
 
 #post-date{
-  font-family: Sans;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: grey;
 }
 
 #post-content{
-  font-family: Sans;
+  font-family: 'Roboto',sans-serif;
   font-size: 14px;
 }
 
