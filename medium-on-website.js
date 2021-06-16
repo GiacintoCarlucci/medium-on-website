@@ -1,6 +1,4 @@
 const API_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40giacintocarlucci&api_key=kgpvqeytkvzw21wkppfr58bfc5arfamrrfqep6ai";
-const AUTHOR_THUMBNAIL = "https://cdn-images-1.medium.com/fit/c/48/48/1*dtPbC22wRpXa0HDha3pGeA.jpeg"
-var feedData = {}
 
 const formatDate = (date) => {
 	// Date formatting options
@@ -39,7 +37,7 @@ const displayPosts = (data) => {
 			<div id="post-container">
 				<div id="post-header">
 					<div id="post-author-image">
-						<img src="${AUTHOR_THUMBNAIL}" alt="${post.author}"/>
+						<img src="${data.feed.image}" alt="${post.author}"/>
 					</div>
 					<div id="post-author-info">
 						<div id="post-author">
