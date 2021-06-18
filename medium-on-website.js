@@ -20,12 +20,6 @@ const trimContent = (content) => {
 	return trimmedString;
 }
 
-const displayHeader = (data) => {
-	let title = data.feed.title;
-	let header = document.getElementById("header");
-	header.innerHTML = title;
-}
-
 const displayPosts = (data) => {
 	let postsArray = data.items;
 	let postsContainer = document.getElementById("posts");
@@ -67,6 +61,5 @@ const displayPosts = (data) => {
 fetch(API_URL)
 	.then(response => response.json())
 	.then(data => {
-		displayHeader(data);
 		displayPosts(data);
 	})
