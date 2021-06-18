@@ -42,13 +42,22 @@ It's so simple that you just need 3 steps:
 If you are building the page from scratch, you can just use the **index.html** example file as starting point.\
 If you want to add Medium blog posts in an existing page, you will at least need to:
 
-- import the stylesheet in the head section: `<link rel="stylesheet" href="style.css"/>`
-- import the script in the head section: `<script type="text/javascript" src="./medium-on-website.js"></script>`
-- have two divs in the body section: `<div id="header"></div>` and `<div id="posts"></div>`
+- import the stylesheet ind script in head section:
+
+```html
+<link rel="stylesheet" href="style.css"/>
+<script type="text/javascript" src="./medium-on-website.js"></script>
+```
+
+- have one div in the body section with 'posts' id: 
+
+```html
+<div id="posts"></div>
+```
 
 If you want, you can import Google fonts used in the stylesheet (or change them):
 
-```
+```html
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@700&family=Roboto&display=swap" rel="stylesheet"> 
 ```
