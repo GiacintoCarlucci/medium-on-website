@@ -1,4 +1,7 @@
 # medium-on-website
+
+![image](https://user-images.githubusercontent.com/37305243/122592204-4651b900-d064-11eb-98b6-9bce4790e7fa.png)
+
 📕 The simplest and most customizable way to show Medium blog posts on your website (and that's responsive)
 
 Medium.com does not have a quick way to have your stories on your personal website... **BUT** it gives you a rss feed.\
@@ -16,9 +19,19 @@ It's so simple that you just need 3 steps:
 ### Set your rss2json account
 
 - Sign up to [rss2json](https://rss2json.com/), then add your Medium rss link link in [/me/feeds/](https://rss2json.com/me/feeds) page. For example, mine is `https://medium.com/feed/@giacintocarlucci`.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/122592476-96c91680-d064-11eb-9426-ff0836ec33fe.png" width=700></p>
+
+
 - Click on the little eye icon on the right and copy your API_URL.
 
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/122592570-ba8c5c80-d064-11eb-992c-6e20b87a99ab.png" width=700></p>
+
+
 **Extra:** you will have 10.000 requests per day with the free plan (which is a ton), but if you want to prevent unhautorized use you can add restriction within IP addresses or HTTP referrers in [/me/api_key/](https://rss2json.com/me/api_key) page.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/122592646-dbed4880-d064-11eb-9cf8-66b3084f8365.png" width=700></p>
+
 
 ### Change the API_URL
 
