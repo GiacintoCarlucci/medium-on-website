@@ -42,7 +42,7 @@ It's so simple that you just need 3 steps:
 If you are building the page from scratch, you can just use the **index.html** example file as starting point.\
 If you want to add Medium blog posts in an existing page, you will at least need to:
 
-- import the stylesheet ind script in head section:
+- import the stylesheet and script in head section:
 
 ```html
 <link rel="stylesheet" href="style.css"/>
