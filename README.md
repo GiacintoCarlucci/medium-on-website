@@ -68,6 +68,6 @@ You can easily customize the HTML post layout and css without any effort, just m
 
 ## TODO
 
-- [ ] more robust api calls
+- [x] more robust api calls
 - [ ] dark mode
 - [ ] compact layout

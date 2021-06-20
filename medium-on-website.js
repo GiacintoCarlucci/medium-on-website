@@ -59,7 +59,16 @@ const displayPosts = (data) => {
 }
 
 fetch(API_URL)
-	.then(response => response.json())
+	.then(response => {
+		if(!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return	response.json()
+	})
 	.then(data => {
 		displayPosts(data);
+	})
+	.catch(error => {
+		console.error('There has been a problem fetching the info: ', error);
+		alert('There has been a problem fetching the info.')
 	})
