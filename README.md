@@ -1,6 +1,6 @@
-# medium-on-website
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/122671739-669a8880-d1c8-11eb-858c-bc3f8b94be5f.png" width=500></p>
 
-![image](https://user-images.githubusercontent.com/37305243/122592204-4651b900-d064-11eb-98b6-9bce4790e7fa.png)
+# medium-on-website
 
 📕 The simplest and most customizable way to show Medium blog posts on your website (and that's responsive)
 
@@ -52,7 +52,7 @@ If you want to add Medium blog posts in an existing page, you will at least need
 - have one div in the body section with 'posts' id: 
 
 ```html
-<div id="posts"></div>
+<div id="posts" data-theme="light"></div>
 ```
 
 If you want, you can import Google fonts used in the stylesheet (or change them):
@@ -64,10 +64,31 @@ If you want, you can import Google fonts used in the stylesheet (or change them)
 
 ## Customization
 
-You can easily customize the HTML post layout and css without any effort, just make your changes to **medium-on-website.js** and **style.css** accordingly.
+### Dark mode
+
+To enable dark mode posts, just change the `<div id="posts" data-theme="light"></div>` to `<div id="posts" data-theme="dark"></div>`\
+in your html file.
+
+As the css file is very intuitive, you can also modify it to change the main colors of light and dark mode:
+
+```css
+/* light mode */
+:root {
+  --color-primary: #000;
+  --color-background: #fff;
+  --color-border: rgba(0, 0, 0, 0.1)
+}
+
+/* dark mode */
+[data-theme="dark"] {
+  --color-primary: #eee;
+  --color-background: #292929;
+  --color-border: #555555;
+}
+```
 
 ## TODO
 
 - [x] more robust api calls
-- [ ] dark mode
+- [x] dark mode
 - [ ] compact layout
