@@ -95,4 +95,4 @@ As the css file is very intuitive, you can also modify it to change the main col
 
 
 
-icons by <a target="_blank" href="https://icons8.com">Icons8</a>
+<p align="right">icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
