@@ -1,12 +1,28 @@
+:root {
+  --color-primary: #000;
+  --color-background: #fff;
+  --color-border: rgba(0, 0, 0, 0.1)
+}
+
+[data-theme="dark"] {
+  --color-primary: #eee;
+  --color-background: #292929;
+  --color-border: #555555;
+}
+
 #post-container{
   max-width: 600px;
   margin: 20px auto;
   padding: 30px;
-  border:1px solid rgba(0, 0, 0, 0.1);
+  border:1px solid;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   line-height: 1.2;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  border-color: var(--color-border);
 }
+
 
 #post-header{
   margin-bottom: 20px;
