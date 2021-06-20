@@ -92,3 +92,7 @@ As the css file is very intuitive, you can also modify it to change the main col
 - [x] more robust api calls
 - [x] dark mode
 - [ ] compact layout
+
+
+
+icons by <a target="_blank" href="https://icons8.com">Icons8</a>
