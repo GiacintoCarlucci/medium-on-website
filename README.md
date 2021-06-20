@@ -1,6 +1,6 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/37305243/122671739-669a8880-d1c8-11eb-858c-bc3f8b94be5f.png" width=500></p>
+<img align="left" src="https://user-images.githubusercontent.com/37305243/122671739-669a8880-d1c8-11eb-858c-bc3f8b94be5f.png" width=450></p>
 
-# medium-on-website
+# Medium on Website
 
 📕 The simplest and most customizable way to show Medium blog posts on your website (and that's responsive)
 
@@ -12,9 +12,9 @@ Fortunately **medium-on-website** solves the problem in a quick way.
 ## How to use
 It's so simple that you just need 3 steps:
 
-1. Set your [rss2json](https://rss2json.com/) account
-2. Change the API_URL in medium-on-website.js
-3. Load the script in the HTML file
+- Set your [rss2json](https://rss2json.com/) account
+- Change the API_URL in medium-on-website.js
+- Load the script in the HTML file
 
 ### Set your rss2json account
 
