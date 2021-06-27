@@ -1,13 +1,76 @@
 const API_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40giacintocarlucci&api_key=kgpvqeytkvzw21wkppfr58bfc5arfamrrfqep6ai";
 
+const getClassicPost = (postData) => {
+  let template = 
+  `
+    <div id="post-container">
+      <div id="post-header">
+        <div id="post-author-image">
+          <img src="${postData.authorImage}" alt="${postData.authorName}"/>
+        </div>
+        <div id="post-author-info">
+          <div id="post-author">
+            ${postData.authorName}
+          </div>
+          <div id="post-date">
+            ${formatDate(postData.postDate)}
+          </div>
+        </div>
+      </div>
+      <img id="post-image" src="${postData.postImage}" alt="${postData.postTitle}"/>
+      <div id="post-title">
+        ${postData.postTitle}
+      </div>
+      <div id="post-content">
+        ${trimContent(postData.postDescription)}...
+        <p id="post-link">
+          <a href="${postData.postLink}"> Continue reading... </a>
+        </p>
+      </div>
+    </div>
+  `
+  return template;
+}
+
+const getCompactPost = (postData) => {
+  let template = 
+  `
+    <div id="post-container">
+      <div id="post-header">
+        <div id="post-author-image">
+          <img src="${postData.authorImage}" alt="${postData.authorName}"/>
+        </div>
+        <div id="post-author-info">
+          <div id="post-author">
+            ${postData.authorName}
+          </div>
+          <div id="post-date">
+            ${formatDate(postData.postDate)}
+          </div>
+        </div>
+      </div>
+      <div id="post-title">
+        ${postData.postTitle}
+      </div>
+      <div id="post-content">
+        ${trimContent(postData.postDescription)}...
+        <p id="post-link">
+          <a href="${postData.postLink}"> Continue reading... </a>
+        </p>
+      </div>
+    </div>
+  `
+  return template;
+}
+
 const formatDate = (date) => {
-	// Date formatting options
-	var options = {year: 'numeric', month: 'long', day: 'numeric' };
-	var dateFormatted = new Date(date);
-	// Format: monthname daynumber, year
-	dateFormatted = dateFormatted.toLocaleDateString('en', options);
-	dateFormatted = dateFormatted.toString();
-	return dateFormatted;
+  // Date formatting options
+  var options = {year: 'numeric', month: 'long', day: 'numeric' };
+  var dateFormatted = new Date(date);
+  // Format: monthname daynumber, year
+  dateFormatted = dateFormatted.toLocaleDateString('en', options);
+  dateFormatted = dateFormatted.toString();
+  return dateFormatted;
 }
 
 const trimContent = (content) => {
@@ -23,38 +86,36 @@ const trimContent = (content) => {
 const displayPosts = (data) => {
 	let postsArray = data.items;
 	let postsContainer = document.getElementById("posts");
-
+  let postTemplate = postsContainer.getAttribute("data-template");
 	postsArray.map((post) => {
-
-		let HTMLPost = 
-		`
-			<div id="post-container">
-				<div id="post-header">
-					<div id="post-author-image">
-						<img src="${data.feed.image}" alt="${post.author}"/>
-					</div>
-					<div id="post-author-info">
-						<div id="post-author">
-							${post.author}
-						</div>
-						<div id="post-date">
-							${formatDate(post.pubDate)}
-						</div>
-					</div>
-				</div>
-				<img id="post-image" src="${post.thumbnail}" alt="${post.title}"/>
-				<div id="post-title">
-					${post.title}
-				</div>
-				<div id="post-content">
-					${trimContent(post.description)}...
-					<p id="post-link">
-						<a href="${post.link}"> Continue reading... </a>
-					</p>
-				</div>
-			</div>
-		`
-		postsContainer.innerHTML += HTMLPost;
+    // creating a custom data object for future flexibility.
+    // this way, if the rss data changes,
+    // I just need to change this object values
+    // instead of changing the post templates.
+    let postData = {
+      authorImage : data.feed.image,
+      authorName : post.author,
+      postDate : post.pubDate,
+      postImage : post.thumbnail,
+      postTitle : post.title,
+      postDescription : post.description,
+      postLink : post.link,
+    }
+    // rendering different templates for each
+    // "data-template" chosen.
+    let HTMLPost = '';
+    switch(postTemplate){
+      case "classic":
+        HTMLPost = getClassicPost(postData)
+        break;
+      case "compact":
+        HTMLPost = getCompactPost(postData)
+        break;
+      default:
+        HTMLPost = getClassicPost(postData)
+    }
+    // appending current post in container
+    postsContainer.innerHTML += HTMLPost;
 	})
 }
 
