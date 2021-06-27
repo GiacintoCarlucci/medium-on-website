@@ -1,11 +1,11 @@
 :root {
-  --color-primary: #000;
-  --color-background: #fff;
-  --color-border: rgba(0, 0, 0, 0.1)
+  --color-primary: #000000;
+  --color-background: #ffffff;
+  --color-border: #dddddd;
 }
 
 [data-theme="dark"] {
-  --color-primary: #eee;
+  --color-primary: #eeeeee;
   --color-background: #292929;
   --color-border: #555555;
 }
