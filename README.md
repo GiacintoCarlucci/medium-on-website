@@ -9,6 +9,21 @@ This means that your stories can be retrieved, parsed and restyled as you want.
 
 Fortunately **medium-on-website** solves the problem in a quick way.
 
+## Table of contents
+* [How to use](#how-to-use)
+  * [Set your rss2json account](#set-your-rss2json-account)
+  * [Change the API_URL](#change-the-api_url)
+  * [Load the script in the HTML file](#load-the-script-in-the-html-file)
+* [Customization](#customization)
+  * [Themes](#themes)
+  * [Templates](#templates)
+    * [Classic](#classic)
+    * [Compact](#compact)
+* [Expand](#expand)
+  * [Add new themes](#add-new-themes)
+  * [Add new templates](#add-new-templates) 
+* [TODO](#todo)
+
 ## How to use
 It's so simple that you just need 3 steps:
 
@@ -52,7 +67,7 @@ If you want to add Medium blog posts in an existing page, you will at least need
 - have one div in the body section with 'posts' id: 
 
 ```html
-<div id="posts" data-theme="light"></div>
+<div id="posts"></div>
 ```
 
 If you want, you can import Google fonts used in the stylesheet (or change them):
@@ -64,35 +79,132 @@ If you want, you can import Google fonts used in the stylesheet (or change them)
 
 ## Customization
 
-### Dark mode
+### Themes
 
-To enable dark mode posts, just change the `<div id="posts" data-theme="light"></div>` to `<div id="posts" data-theme="dark"></div>`\
-in your html file.
+To change the post theme, just use the `data-theme` attribute in the main div of the **index.html** file.\
+You can choose beween the following themes:
 
-As the css file is very intuitive, you can also modify it to change the main colors of light and dark mode:
+| theme | background | text       | border     |
+| ----- | :--------: | :--------: | :--------: |
+| light | ![#FFFFFF] | ![#000000] | ![#DDDDDD] |
+| dark  | ![#292929] | ![#EEEEEE] | ![#555555] |
+
+### Templates
+
+To change the post layout, you can use the provided templates using the `data-template` attribute in the main div of the **index.html** file\
+The available templates are the following:
+
+#### Classic:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/123555459-1b631580-d786-11eb-8502-16091c63ae65.png" width=700></p>
+
+#### Compact:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/123555500-611fde00-d786-11eb-99f5-13208dbdc701.png" width=700></p>
+
+## Expand 
+
+### Add new Themes
+
+As the css file is very intuitive, you can easily add your themes:
 
 ```css
 /* light mode */
 :root {
-  --color-primary: #000;
-  --color-background: #fff;
-  --color-border: rgba(0, 0, 0, 0.1)
+  --color-primary: #000000;
+  --color-background: #ffffff;
+  --color-border: #dddddd
 }
 
 /* dark mode */
 [data-theme="dark"] {
-  --color-primary: #eee;
+  --color-primary: #eeeeee;
   --color-background: #292929;
   --color-border: #555555;
 }
+
+/* your custom theme */
+[data-theme="custom"] {
+  --color-primary: ???;
+  --color-background: ???;
+  --color-border: ???
+}
+
+```
+
+### Add new Templates
+
+If you want to create your custom template just take in example one of the current templates and adjust the code accordingly, every template is an arrow function that returns an html string + the info passed with postData parameter:
+
+```javascript
+const getClassicPost = (postData) => {
+  let template = 
+  `
+    <div id="post-container">
+      <div id="post-header">
+        <div id="post-author-image">
+          <img src="${postData.authorImage}" alt="${postData.authorName}"/>
+        </div>
+        <div id="post-author-info">
+          <div id="post-author">
+            ${postData.authorName}
+          </div>
+          <div id="post-date">
+            ${formatDate(postData.postDate)}
+          </div>
+        </div>
+      </div>
+      <img id="post-image" src="${postData.postImage}" alt="${postData.postTitle}"/>
+      <div id="post-title">
+        ${postData.postTitle}
+      </div>
+      <div id="post-content">
+        ${trimContent(postData.postDescription)}...
+        <p id="post-link">
+          <a href="${postData.postLink}"> Continue reading... </a>
+        </p>
+      </div>
+    </div>
+  `
+  return template;
+}
+```
+
+Do not forget to add the new template name to the switch case in displayPosts function:
+
+```javascript
+/*...*/
+switch(postTemplate){
+      case "classic":
+        HTMLPost = getClassicPost(postData)
+        break;
+      case "compact":
+        HTMLPost = getCompactPost(postData)
+        break;
+      case "custom":
+        /* calling your custom template function*/
+        HTMLPost = getCustomPost(postData)
+        break;
+      default:
+        HTMLPost = getClassicPost(postData)
+    }
+/*...*/
 ```
 
 ## TODO
 
-- [x] more robust api calls
-- [x] dark mode
-- [ ] compact layout
-
-
+- [x] 💪 more robust api calls
+- [x] 🌗 light/dark theme
+- [ ] 🦇 batman theme
+- [x] 👌 compact layout
+- [ ] 🤏 mini layout
 
 <p align="right">icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+
+[//]: # (Place the Hex color you want in the url below, returns a square 25x25 of the specified color)
+[#FFFFFF]: https://via.placeholder.com/25/FFFFFF?text=+
+[#000000]: https://via.placeholder.com/25/000000?text=+
+[#DDDDDD]: https://via.placeholder.com/25/DDDDDD?text=+
+[#292929]: https://via.placeholder.com/25/292929?text=+
+[#EEEEEE]: https://via.placeholder.com/25/EEEEEE?text=+
+[#555555]: https://via.placeholder.com/25/555555?text=+
