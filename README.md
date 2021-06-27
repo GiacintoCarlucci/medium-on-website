@@ -84,10 +84,11 @@ If you want, you can import Google fonts used in the stylesheet (or change them)
 To change the post theme, just use the `data-theme` attribute in the main div of the **index.html** file.\
 You can choose beween the following themes:
 
-| theme | background | text       | border     |
-| ----- | :--------: | :--------: | :--------: |
-| light | ![#FFFFFF] | ![#000000] | ![#DDDDDD] |
-| dark  | ![#292929] | ![#EEEEEE] | ![#555555] |
+| theme  | background | text       | border     | link       |
+| ------ | :--------: | :--------: | :--------: | :--------: |
+| light  | ![#FFFFFF] | ![#000000] | ![#DDDDDD] | ![#0373B7] |
+| dark   | ![#292929] | ![#EEEEEE] | ![#555555] | ![#46A7E1] |
+| batman | ![#282E3C] | ![#FDFF00] | ![#242424] | ![#46A7E1] |
 
 ### Templates
 
@@ -113,7 +114,8 @@ As the css file is very intuitive, you can easily add your themes:
 :root {
   --color-primary: #000000;
   --color-background: #ffffff;
-  --color-border: #dddddd
+  --color-border: #dddddd;
+  --color-link: #0373b7;
 }
 
 /* dark mode */
@@ -121,13 +123,15 @@ As the css file is very intuitive, you can easily add your themes:
   --color-primary: #eeeeee;
   --color-background: #292929;
   --color-border: #555555;
+  --color-link: #46a7e1;
 }
 
 /* your custom theme */
 [data-theme="custom"] {
   --color-primary: ???;
   --color-background: ???;
-  --color-border: ???
+  --color-border: ???;
+  --color-link: ???;
 }
 
 ```
@@ -195,7 +199,7 @@ switch(postTemplate){
 
 - [x] 💪 more robust api calls
 - [x] 🌗 light/dark theme
-- [ ] 🦇 batman theme
+- [x] 🦇 batman theme
 - [x] 👌 compact layout
 - [ ] 🤏 mini layout
 
@@ -205,6 +209,11 @@ switch(postTemplate){
 [#FFFFFF]: https://via.placeholder.com/25/FFFFFF?text=+
 [#000000]: https://via.placeholder.com/25/000000?text=+
 [#DDDDDD]: https://via.placeholder.com/25/DDDDDD?text=+
+[#0373B7]: https://via.placeholder.com/25/0373B7?text=+
 [#292929]: https://via.placeholder.com/25/292929?text=+
 [#EEEEEE]: https://via.placeholder.com/25/EEEEEE?text=+
 [#555555]: https://via.placeholder.com/25/555555?text=+
+[#46A7E1]: https://via.placeholder.com/25/46A7E1?text=+
+[#282E3C]: https://via.placeholder.com/25/282E3C?text=+
+[#FDFF00]: https://via.placeholder.com/25/FDFF00?text=+
+[#242424]: https://via.placeholder.com/25/242424?text=+
