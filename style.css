@@ -2,12 +2,21 @@
   --color-primary: #000000;
   --color-background: #ffffff;
   --color-border: #dddddd;
+  --color-link: #0373b7;
 }
 
 [data-theme="dark"] {
   --color-primary: #eeeeee;
   --color-background: #292929;
   --color-border: #555555;
+  --color-link: #46a7e1;
+}
+
+[data-theme="batman"] {
+  --color-primary: #fdff00;
+  --color-background: #282e3c;
+  --color-border: #242424;
+  --color-link: #46a7e1;
 }
 
 #post-container{
@@ -74,7 +83,8 @@
   font-size: 14px;
 }
 
-#post-link a:link{
+#post-link a:link, a:visited{
   font-weight: 300;
   text-decoration: none;
+  color:var(--color-link);
 }
