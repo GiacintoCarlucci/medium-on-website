@@ -63,6 +63,23 @@ const getCompactPost = (postData) => {
   return template;
 }
 
+const getMiniPost = (postData) => {
+  let template = 
+  `
+    <div id="post-container" class="mini">
+    <a id="post-link" class="mini" href="${postData.postLink}">
+      <div id="post-title" class="mini">
+      <span>
+        ${postData.postTitle}
+      </span>
+      </div>
+      <img id="post-image" class="mini" src="${postData.postImage}" alt="${postData.postTitle}"/>
+    </a>
+    </div>
+  `
+  return template;
+}
+
 const formatDate = (date) => {
   // Date formatting options
   var options = {year: 'numeric', month: 'long', day: 'numeric' };
@@ -110,6 +127,9 @@ const displayPosts = (data) => {
         break;
       case "compact":
         HTMLPost = getCompactPost(postData)
+        break;
+      case "mini":
+        HTMLPost = getMiniPost(postData)
         break;
       default:
         HTMLPost = getClassicPost(postData)

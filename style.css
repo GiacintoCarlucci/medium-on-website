@@ -32,6 +32,11 @@
   border-color: var(--color-border);
 }
 
+#post-container.mini{
+  padding: 0;
+  overflow: auto;
+}
+
 
 #post-header{
   margin-bottom: 20px;
@@ -71,11 +76,28 @@
   margin-bottom: 20px;
 }
 
+#post-image.mini{
+  width: 200px;
+  margin: 0;
+  float:right;
+  display: inline-block;
+}
+
 #post-title{
   font-family: 'Palanquin', sans-serif;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 5px
+}
+
+#post-title.mini{
+  display:inline-block;
+  max-width: calc(100% - 220px);
+  margin: 20px auto 20px 20px;
+}
+
+#post-title.mini span{
+  vertical-align: middle;
 }
 
 #post-content{
@@ -87,4 +109,9 @@
   font-weight: 300;
   text-decoration: none;
   color:var(--color-link);
+}
+
+#post-link.mini {
+  text-decoration:none;
+  color:var(--color-primary);
 }
