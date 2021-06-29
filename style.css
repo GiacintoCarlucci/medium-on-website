@@ -32,12 +32,6 @@
   border-color: var(--color-border);
 }
 
-#post-container.mini{
-  padding: 0;
-  overflow: auto;
-}
-
-
 #post-header{
   margin-bottom: 20px;
 }
@@ -76,28 +70,11 @@
   margin-bottom: 20px;
 }
 
-#post-image.mini{
-  width: 200px;
-  margin: 0;
-  float:right;
-  display: inline-block;
-}
-
 #post-title{
   font-family: 'Palanquin', sans-serif;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 5px
-}
-
-#post-title.mini{
-  display:inline-block;
-  max-width: calc(100% - 220px);
-  margin: 20px auto 20px 20px;
-}
-
-#post-title.mini span{
-  vertical-align: middle;
 }
 
 #post-content{
@@ -111,7 +88,49 @@
   color:var(--color-link);
 }
 
+/* TEMPLATES */
+/* MINI */
+#post-container.mini{
+  padding: 0;
+  overflow: auto;
+}
+
+#post-image.mini{
+  width: 200px;
+  margin: auto 0 auto auto;
+  display: flex;
+  border-radius: 0 5px 5px 0;
+}
+
+#post-title.mini{
+  display:inline-block;
+  max-width: calc(100% - 220px);
+  margin-top: auto;
+  font-size: 24px;
+  margin-bottom: auto;
+  margin-left: 20px;
+}
+
+#post-title.mini span{
+  vertical-align: text-top;
+}
+
 #post-link.mini {
+  display: flex;
   text-decoration:none;
   color:var(--color-primary);
+}
+
+/* MEDIA QUERIES */
+/* ---- 480 ---- */
+@media (max-width: 480px){
+  /* --- MINI --- */
+  #post-image.mini{
+    display: none;
+  }
+  #post-title.mini{
+    max-width: 100%;
+    font-size: 20px;
+    margin:20px;
+  }
 }
