@@ -201,7 +201,7 @@ switch(postTemplate){
 - [x] 🌗 light/dark theme
 - [x] 🦇 batman theme
 - [x] 👌 compact layout
-- [ ] 🤏 mini layout
+- [x] 🤏 mini layout
 
 <p align="right">icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
 
