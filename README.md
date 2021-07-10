@@ -17,8 +17,6 @@ Fortunately **medium-on-website** solves the problem in a quick way.
 * [Customization](#customization)
   * [Themes](#themes)
   * [Templates](#templates)
-    * [Classic](#classic)
-    * [Compact](#compact)
 * [Expand](#expand)
   * [Add new themes](#add-new-themes)
   * [Add new templates](#add-new-templates) 
