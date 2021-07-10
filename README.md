@@ -1,6 +1,6 @@
 # Medium on Website
 
-<p align="center"><img src="https://user-images.githubusercontent.com/37305243/122671739-669a8880-d1c8-11eb-858c-bc3f8b94be5f.png" width=450></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/37305243/125170279-85c87c80-e1ae-11eb-9048-101cbb4da07a.gif"></p>
 
 📕 The simplest and most customizable way to show Medium blog posts on your website (and that's responsive)
 
