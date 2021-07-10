@@ -95,13 +95,9 @@ You can choose beween the following themes:
 To change the post layout, you can use the provided templates using the `data-template` attribute in the main div of the **index.html** file\
 The available templates are the following:
 
-#### Classic:
-
-<p align="center"><img src="https://user-images.githubusercontent.com/37305243/123555459-1b631580-d786-11eb-8502-16091c63ae65.png" width=700></p>
-
-#### Compact:
-
-<p align="center"><img src="https://user-images.githubusercontent.com/37305243/123555500-611fde00-d786-11eb-99f5-13208dbdc701.png" width=700></p>
+- classic
+- compact
+- mini
 
 ## Expand 
 
